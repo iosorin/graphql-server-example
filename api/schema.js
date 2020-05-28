@@ -1,6 +1,13 @@
 const { buildSchema } = require('graphql');
 
 /**
+ * Example:
+     query {
+        todos(status: UNCOMPLETED) {
+            ...Todo
+        }
+    }
+
     fragment Todo on Todo {
         id
         title
@@ -25,9 +32,14 @@ const schema = `
         steps: [Step]
     }
 
+    enum Status {
+        COMPLETED,
+        UNCOMPLETED
+    }
+
     type Query {
         todo(id: ID!): Todo!
-        todos: [Todo]!
+        todos(status: Status): [Todo]!
     }
 `;
 

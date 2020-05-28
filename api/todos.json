@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "delectus aut autem",
-        "completed": false,
+        "completed": true,
         "steps": [
             {
                 "title": "step_1: substep_1",
@@ -17,7 +17,7 @@
     {
         "id": 2,
         "title": "quis ut nam facilis et officia qui",
-        "completed": false,
+        "completed": true,
         "steps": [
             {
                 "title": "step_2: substep_1",
@@ -36,7 +36,7 @@
         "steps": [
             {
                 "title": "step_3: substep_1",
-                "completed": true
+                "completed": false
             },
             {
                 "title": "step_3: substep_2",
