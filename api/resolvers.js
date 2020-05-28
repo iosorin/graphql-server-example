@@ -1,4 +1,4 @@
-const Todo = require('./model');
+const Todo = require('./todoModel');
 
 const queries = {
     todo: ({ id }) => Todo.findById(id),
