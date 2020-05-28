@@ -25,10 +25,25 @@ const schema = `
         completed: Boolean!
     }
 
+    """
+    Todo - type which is well described.
+    """
     type Todo {
         id: ID!
+
+        """
+        Название
+        """
         title: String!
+
+        """
+        Текущий статус выполнения
+        """
         completed: Boolean!
+
+        """
+        Список подзадач
+        """
         steps: [Step]
     }
 
@@ -40,6 +55,23 @@ const schema = `
     type Query {
         todo(id: ID!): Todo!
         todos(status: Status): [Todo]!
+    }
+
+    input StepInput {
+        title: String!
+        completed: Boolean = false
+    }
+
+    input TodoInput {
+        title: String!
+        steps: [StepInput],
+        completed: Boolean = false
+    }
+
+    type Mutation {
+        createTodo(input: TodoInput!): Todo
+        updateTodo(id: ID!, input: TodoInput): Todo
+        deleteTodo(id: ID!): ID
     }
 `;
 
