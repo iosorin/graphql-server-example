@@ -1,5 +1,17 @@
 const { buildSchema } = require('graphql');
 
+/**
+    fragment Todo on Todo {
+        id
+        title
+        completed
+        steps {
+            title
+            completed
+        }
+    }
+ */
+
 const schema = `
     type Step {
         title: String!
